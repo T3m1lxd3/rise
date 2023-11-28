@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title> Animated about us page using HTML & css </title>
+      <meta charset="utf-8">
+      meta name="viewport" content="width=device-width, intial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="css/style.css"
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<section class="heor"
+     <div class="heading">
+  <h1> Objective :</h1>
+  
+</div>
+<div class="container">
+  <h2> Welcome To Our Website</h2>
+  <p>
+    At "Recycle Bin Finder," our mission is simple: to empower individuals and communities to make a positive impact on our environment. We believe in the power of small actions that, when combined, can drive significant change.
+
+Our team is committed to the principles of waste reduction, a cleaner environment, and the promotion of recycling. We are passionate about making it easier for you to locate and utilize recycling bins in your area, ultimately contributing to a sustainable future for all. 
+
+Join us on this eco-conscious journey, and let's work together to create a greener, cleaner world, one bin at a time.
+  </p>
+</div>
+<div class="green image">
+  <img src= 
+</div>
+  </body>
+</html>

@@ -33,7 +33,7 @@ body {
   }
   
   .thin-divider {
-    height: 4px;
+    height: 3px;
     background-color: #556843;
     margin: 20px 0 10px;
   }
@@ -46,21 +46,28 @@ body {
     display: inline-block;
     position: relative;
     padding-bottom: 10px;
+    padding-top: 2px;
   }
   
   .reviews-title::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    height: 4px; /* Slightly thicker line */
-    width: 40px; /* Slightly shorter line */
+    height: 4.5px; /* Slightly thicker line */
+    width: 45px; /* Slightly shorter line */
     background-color: #556843;
   }
   
+  .review-navigation{
+    padding-top: 20px;
+    ;
+  }
   .review-box-container {
     display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
     justify-content: space-around; /* Proper spacing between reviews */
     align-items: center; /* Center the reviews horizontally */
   }
@@ -68,6 +75,7 @@ body {
   .review-box {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
     padding: 20px;
     width: 25%; /* Each review box takes up 25% of the container */
     text-align: center;
@@ -143,10 +151,20 @@ body {
     cursor: pointer;
   }
 
-  
+
   .customer-name,
   .star-rating,
   .customer-review {
     margin-bottom: 10px;
   }
   
+
+  .icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon ion-icon {
+    font-size: 24px;
+    margin-right: 80px; /* Adjust the margin as needed */
+}

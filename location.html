@@ -1,0 +1,135 @@
+<!--  
+    Description:
+    Discover our various locations with ease on our Locations page. 
+    Immerse yourself in an interactive map, read customer reviews, 
+    and explore the services offered at each site.
+    Author:
+    Lauriane Houndjahoue
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Customer Reviews and Map</title>
+  </head>
+  <body>
+    <!--navbar from the home page-->
+    <header>
+        <h2 class="logo">EcoRecycling</h2>
+        <nav class="navigation">
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="location.html">Services</a>
+          <button class="btnLogin-popup">Login</button>
+        </nav>
+      </header>
+  
+
+    <div class="location-container">
+      <div class="header">
+        <h1>Locations</h1>
+         </div>
+        <div class="search-box">
+          <input
+            type="text"
+            id="locationSearch"
+            placeholder="Search location..."
+          />
+          <span class="icon">
+            <ion-icon name="search-outline"></ion-icon>
+          </span>
+      </div>
+
+      <div class="map-container">
+        <!-- Replace the following iframe with your actual map URL -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424760.7970675433!2d-84.98792281093745!3d33.72334030000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f503b79c4cbb7f%3A0xdfa4cb2dd6d81b25!2sThe%20Center%20for%20Hard%20to%20Recycle%20Materials%20CHaRM!5e0!3m2!1sen!2sus!4v1700868077644!5m2!1sen!2sus"
+          width="100%"
+          height="500"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="thin-divider"></div>
+
+      <div class="reviews">
+        <div class="reviews-title">Reviews</div>
+        <div class="review-navigation">
+          <span class="page-indicator darker">1</span>
+          <span class="page-indicator">2</span>
+          <span class="page-indicator">3</span>
+          <span class="page-indicator">. . .</span>
+          <span class="page-indicator">6</span>
+        </div>
+
+        <div class="review-box-container">
+          <div class="review-box">
+            <div class="review-circle">1</div>
+            <div class="customer-name">Eco-Recycling Rocks!</div>
+            <div class="star-rating">★★★★☆</div>
+            <div class="customer-review">
+                <p>"Eco-Finder simplifies recycling with its user-friendly interface. 
+                Accurate and up-to-date, it's a must-have for anyone striving for a greener lifestyle." </p>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-circle">2</div>
+            <div class="customer-name">Effortless Recycling Locator</div>
+            <div class="star-rating">★★★★★</div>
+            <div class="customer-review">
+              <p>"Recycling Bin Finder is a breeze to use. Enter your location,
+                 find the nearest bins—it's that easy for a sustainable lifestyle."</p>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-circle">3</div>
+            <div class="customer-name">Middle-of-the-Road Recycling Resource</div>
+            <div class="star-rating">★★★☆☆</div>
+            <div class="customer-review">
+              <p>"I find Recycling Bin Finder to be decent—locations are accurate,
+                 but the interface feels a bit dated."</p>
+            </div>
+          </div>
+        </div>
+
+        <button id="leaveReviewBtn">Leave a Review</button>
+      </div>
+    </div>
+
+    <div id="reviewForm" class="hidden">
+      <div id="formHeader">
+        <h2>Leave a Review</h2>
+        <button id="closeReviewFormBtn">×</button>
+      </div>
+      <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="reviewText">Review:</label>
+        <textarea id="reviewText" name="reviewText" required></textarea>
+
+        <button type="button" id="submitReview">Submit Review</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

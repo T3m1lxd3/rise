@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*login styling*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px #162938;
+    user-select: none;
+
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-shadow: 2px 2px #162938;
+    text-decoration: none;
+    font-weight: 1000;
+    margin-left: 40px;
+
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper{
+    position: relative;
+    left: 35%;
+    width: 450px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rbga(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+    z-index: 1;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+    padding: 40px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .form-box.register .input-box {
+    margin: 20px 0;
+}
+
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    left: 250px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.home {
+    position: absolute;
+    text-align: center;
+    margin: 100px 0 50px;
+ 
+}
+
+/*actual homepage styling*/
+.text-box{
+    display: flex;
+    position: relative;
+    width: 100%;
+    color: #162938;
+    text-decoration: none;
+    font-size: 50px;
+    margin-left: -150px;
+    text-align: center;
+    
+
+}
+
+.objective-box{
+    color: #fff;
+    text-shadow: 2px 2px #162938;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: -60px;
+}
+
+.btnDownload-popup
+{
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    background-color:transparent;
+    margin-right: 70px;
+    border: 6px solid #fff;
+    width: 30%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    transition: .5s ease;
+
+}
+
+.btnDownload-popup:hover {
+    background: #fff;
+    color: #162938;
+
+}
+
+/*location styling*/
+
+.location-container{
+    padding: 30px;
+}
+.location-container .header {
+    margin: 100px 25px;
+    padding: 0px 30px;
+    color: #fff;
+    text-shadow: 2px 2px #162938;
+    text-align: center;
+    font-size: x-large;
+}
+
+.search-box {
+    position: relative;
+    padding: 20px 30px;
+    margin-top: -7%;
+  
+}
+
+#locationSearch {
+    padding: 10px;
+    padding-right: 40px; /* Ensure enough space on the right for the icon */
+}
+
+.icon {
+    position: relative;
+    top: 50%;
+    right: 0px; /* Adjust the distance from the right edge */
+    transform: translateY(-50%);
+    padding-left: 100px;
+    font-size: 30px;
+}
+
+.icon ion-icon {
+    font-size: 24px;
+    color: #162938; /* Adjust the icon color as needed */
+    position: relative;
+    top: 20px;
+    right: 90px; /* Adjust the distance from the right edge */
+    transform: translateY(-50%);
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Increased maximum width for the map */
+    margin: 0 auto 20px; /* Add some spacing at the bottom */
+    width: 80%; /* Adjust the width */
+    height: 500px; /* Adjust the height */
+}
+
+.thin-divider {
+    height: 3px;
+    background-color: #162938;
+    margin: 20px 0 10px;
+}
+
+.reviews {
+    text-align: center;
+}
+
+.reviews-title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 2px;
+    color: #fff;
+}
+
+.reviews-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4.5px; /* Slightly thicker line */
+    width: 45px; /* Slightly shorter line */
+    background-color: #162938;
+}
+
+.review-navigation {
+    padding-top: 20px;
+    color: #fff;
+}
+
+.review-box-container {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-around; /* Proper spacing between reviews */
+    align-items: center; /* Center the reviews horizontally */
+}
+
+.review-box {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding: 20px;
+    width: 25%; /* Each review box takes up 25% of the container */
+    text-align: center;
+    margin: 0 10px; /* Space between review boxes */
+    transition: transform 0.3s ease-in-out;
+    color: #162938;
+}
+
+.review-box:hover {
+    transform: scale(1.05);
+}
+
+.review-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #162938;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.leave-review {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#leaveReviewBtn {
+    background-color: #162938;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#leaveReviewBtn:hover {
+    background-color: #fff;
+    color: #162938;
+}
+
+body.review-form-active {
+    filter: blur(5px);
+}
+
+#reviewForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(22, 41, 56, 0.95); /* Navy blue with some transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    width: 80%;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#reviewForm.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#closeReviewFormBtn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+#closeReviewFormBtn:hover {
+    color: #162938;
+}
+
+#submitReview {
+    background-color: #162938;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#submitReview:hover {
+    background-color: #fff;
+    color: #162938;
+}
+
+
+h2 {
+    color: #fff;
+}
+form label {
+    display: block;
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.customer-name,
+.star-rating,
+.customer-review {
+    margin-bottom: 10px;
+}
+
+/*about styling*/
+.about {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 55%;
+}
+
+.about p {
+    border: 3px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(148, 175, 148);
+    
+    
+}
+
+.welcome {
+    position: absolute;
+    padding: 30px 30px;
+    top: 10%;
+   
+}
+
+.green-image img {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    border-radius: 30px;
+ }
+ .contact  {
+    position:absolute;
+    padding: 10px 30px;
+    top: 70%;
+    right: 50px; 
+    border: 5px solid black;
+    border-radius: 30px; 
+    width: 500px;
+    height: 150px;
+    background-color: rgb(148, 175, 148);
+ }
